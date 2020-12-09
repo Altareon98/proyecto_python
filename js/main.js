@@ -49,6 +49,16 @@ $(document).ready(function () {
     })
 });
 
+document.getElementById('btnDescargar').addEventListener('click', e => {
+    console.log("Initializing...");
+    $.ajax({
+        method: "POST",
+        url: "http://localhost/p/veranos/dataToJson.py"
+    }).done(function() {
+        console.log("Success");
+    });
+});
+
 function reloadTable() {
     $("#tablaAlumnos tbody").html("")
     $.ajax({
